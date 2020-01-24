@@ -1,0 +1,106 @@
+doctype html
+html(lang='en')
+  head
+    title micro-code-review
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    // ===============================================================================================
+    link(rel='icon', type='image/png', href='images/icons/favicon.ico')
+    // ===============================================================================================
+    link(rel='stylesheet', type='text/css', href='vendor/bootstrap/css/bootstrap.min.css')
+    // ===============================================================================================
+    link(rel='stylesheet', type='text/css', href='fonts/font-awesome-4.7.0/css/font-awesome.min.css')
+    // ===============================================================================================
+    link(rel='stylesheet', type='text/css', href='vendor/animate/animate.css')
+    // ===============================================================================================
+    link(rel='stylesheet', type='text/css', href='vendor/css-hamburgers/hamburgers.min.css')
+    // ===============================================================================================
+    link(rel='stylesheet', type='text/css', href='vendor/animsition/css/animsition.min.css')
+    // ===============================================================================================
+    link(rel='stylesheet', type='text/css', href='vendor/select2/select2.min.css')
+    // ===============================================================================================
+    link(rel='stylesheet', type='text/css', href='vendor/daterangepicker/daterangepicker.css')
+    // ===============================================================================================
+    link(rel='stylesheet', type='text/css', href='css/util.css')
+    link(rel='stylesheet', type='text/css', href='css/main.css')
+    // ===============================================================================================
+    link(rel='stylesheet', href='css/codemirror.css')
+
+  body
+    .container-contact100
+      .wrap-contact100
+        form.contact100-form.validate-form
+          span.contact100-form-title
+            | Paste your code snippet below!
+          .wrap-input100.validate-input(data-validate='Name is required')
+            span.label-input100 Your Name
+            input.input100#name(type='text', name='name', placeholder='Enter your name')
+            span.focus-input100
+          .wrap-input100.validate-input(data-validate='Valid email is required: ex@abc.xyz')
+            span.label-input100 Email
+            input.input100#mail(type='text', name='email', placeholder='Enter your email address')
+            span.focus-input100
+          .wrap-input100.input100-select
+            span.label-input100 Programming Language
+            div
+              select.selection-2#language(name='service')
+                option Select Programming Language
+                option JavaScript
+                option Python
+                option C, C++, C#
+                option Go
+                option Java
+                option Objective C
+                option PHP
+                option Swift
+            span.focus-input100
+          //.wrap-input100.input100-select
+            span.label-input100 Budget
+            div
+              select.selection-2(name='budget')
+                option Select Budget
+                option 15 $
+                option 20 $
+                option 25 $
+            span.focus-input100
+          .wrap-input100.validate-input(data-validate='Message is required')
+            span.label-input100 Code Snippet
+            textarea.input100#code(name='message', placeholder='Your code snippet here...')
+            span.focus-input100
+          .container-contact100-form-btn
+            .wrap-contact100-form-btn
+              .contact100-form-bgbtn
+              button.contact100-form-btn
+                span
+                  | Request Review
+                  i.fa.fa-long-arrow-right.m-l-7(aria-hidden='true')
+    #dropDownSelect1
+    // ===============================================================================================
+    script(src='vendor/jquery/jquery-3.2.1.min.js')
+    // ===============================================================================================
+    script(src='vendor/animsition/js/animsition.min.js')
+    // ===============================================================================================
+    script(src='vendor/bootstrap/js/popper.js')
+    script(src='vendor/bootstrap/js/bootstrap.min.js')
+    // ===============================================================================================
+    script(src='vendor/select2/select2.min.js')
+    script.
+      $(".selection-2").select2({
+      minimumResultsForSearch: 20,
+      dropdownParent: $('#dropDownSelect1')
+      });
+    // ===============================================================================================
+    script(src='vendor/daterangepicker/moment.min.js')
+    script(src='vendor/daterangepicker/daterangepicker.js')
+    // ===============================================================================================
+    script(src='vendor/countdowntime/countdowntime.js')
+    // ===============================================================================================
+    script(src='js/codemirror.js')
+    script(src='js/mode/javascript/javascript.js')
+    script(src='js/main.js')
+    script.
+      var editor = CodeMirror.fromTextArea(document.getElementById('code'), {
+          lineNumbers: true,
+          gutter: true,
+          lineWrapping: true
+      });

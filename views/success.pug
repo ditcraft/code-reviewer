@@ -1,0 +1,31 @@
+doctype html
+html(lang='en')
+  head
+    title micro-code-review
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    // ===============================================================================================
+    link(rel='icon', type='image/png', href='images/icons/favicon.ico')
+    // ===============================================================================================
+    link(rel='stylesheet', type='text/css', href='vendor/bootstrap/css/bootstrap.min.css')
+    // ===============================================================================================
+    link(rel='stylesheet', type='text/css', href='fonts/font-awesome-4.7.0/css/font-awesome.min.css')
+    // ===============================================================================================
+    link(rel='stylesheet', type='text/css', href='css/util.css')
+    link(rel='stylesheet', type='text/css', href='css/main.css')
+    // ===============================================================================================
+  body
+    .container-contact100
+      .wrap-contact100
+        form.contact100-form.validate-form
+          span.contact100-form-title
+            | You have successfully submitted your code snippet for reviewing!
+          p It should take around 48 hours before you will receive your free result sent via email. It will be reviewed by our community experts and by an automated process. Please use 
+            span#reference.font-weight-bold
+            |  as a reference, if you should encounter any problems.
+    // ===============================================================================================
+    script(src='vendor/jquery/jquery-3.2.1.min.js')
+    script.
+      var urlParams = new URLSearchParams(window.location.search);
+      console.log(urlParams.get('id'));
+      $('#reference').text("#" + urlParams.get('id'));

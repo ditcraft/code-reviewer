@@ -46,7 +46,8 @@
                 name: $(name).val(),
                 email: $(email).val(),
                 lang: $("#language").children("option:selected").val(),
-                code: editor.getValue()
+                code: editor.getValue(),
+                link: $('#link').val()
             };
 
             $.ajax({

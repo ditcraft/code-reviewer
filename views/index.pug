@@ -87,9 +87,16 @@ html(lang='en')
                 option 20 $
                 option 25 $
             span.focus-input100
+          .mt-5.mb-2
+            span You can either paste a link or submit your code directly.
           .wrap-input100.validate-input(data-validate='Message is required')
             span.label-input100 Code Snippet
             textarea.input100#code(name='message', placeholder='Your code snippet here...')
+            span.focus-input100
+          span.contact100-form-title OR
+          .wrap-input100.validate-input(data-validate='Valid link is required')
+            span.label-input100 Link to Code Snippet (i.e. GitHub pull request, Pastebin, Codeshare etc.)
+            input.input100#link(type='text', name='link', placeholder='https://')
             span.focus-input100
           .container-contact100-form-btn
             .wrap-contact100-form-btn
